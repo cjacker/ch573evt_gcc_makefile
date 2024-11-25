@@ -1,11 +1,12 @@
 /********************************** (C) COPYRIGHT ******************************
  * File Name         : CH57xBLE_LIB.H
  * Author            : WCH
- * Version           : V2.10
- * Date              : 2023/01/13
+ * Version           : V2.20
+ * Date              : 2024/01/02
  * Description       : head file
-
  * Copyright (c) 2021 Nanjing Qinheng Microelectronics Co., Ltd.
+ * Attention: This software (modified or not) and binary are used for
+ * microcontroller manufactured by Nanjing Qinheng Microelectronics.
  *******************************************************************************/
 
 
@@ -179,7 +180,7 @@ typedef struct
 /*********************************************************************
  * GLOBAL MACROS
  */
-#define  VER_FILE            "CH57x_BLE_LIB_V2.1"
+#define  VER_FILE            "CH57x_BLE_LIB_V2.2"
 extern const uint8_t VER_LIB[];  // LIB version
 #define SYSTEM_TIME_MICROSEN            625   // unit of process event timer is 625us
 #define MS1_TO_SYSTEM_TIME(x)  ((x)*1000/SYSTEM_TIME_MICROSEN)   // transform unit in ms to unit in 625us ( attentional bias )
@@ -777,7 +778,8 @@ extern const uint8_t VER_LIB[];  // LIB version
 #define TGAP_SCAN_RSSI_MIN                      22  //!< Minimum RSSI required for scan advertising to be reported to the app. Default -127.
 #define TGAP_REJECT_CONN_PARAMS                 23  //!< Whether or not to reject Connection Parameter Update Request received on Central device. Default FALSE.
 #define TGAP_AUTH_TASK_ID                       24  //!< Task ID override for Task Authentication control (for stack internal use only)
-#define TGAP_PARAMID_MAX                        25  //!< ID MAX-valid Parameter ID
+#define TGAP_ADV_RSP_RSSI_MIN                   25  //!< The minimum RSSI for advertising to send scanning response. Default -127.
+#define TGAP_PARAMID_MAX                        26  //!< ID MAX-valid Parameter ID
 
 // GAP_DEVDISC_MODE_DEFINES GAP Device Discovery Modes
 #define DEVDISC_MODE_NONDISCOVERABLE            0x00  //!< No discoverable setting

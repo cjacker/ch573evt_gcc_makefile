@@ -35,10 +35,20 @@ static void test_dtm_process_msg(tmos_event_hdr_t *pMsg) {
 
         evt = hci_cmd_handle((struct simple_buf*)msg->data);
 
-        if(evt)
             uart_send(evt);
+            uart_start_receiving();
+    }
+        break;
 
-        uart_start_receiving();
+    case USB_PROCESS_EVT:
+    {
+        struct simple_buf *evt = NULL;
+        struct usb_process_msg *msg = \
+            (struct usb_process_msg *)pMsg;
+
+        evt = hci_cmd_handle((struct simple_buf*)msg->data);
+            usb_send(evt);
+            usb_start_receiving();
     }
         break;
 

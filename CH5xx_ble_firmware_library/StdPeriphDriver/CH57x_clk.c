@@ -627,6 +627,10 @@ void RTC_TRIGFunCfg(uint32_t cyc)
     uint32_t t;
 
     t = RTC_GetCycle32k() + cyc;
+    if(t > 0xA8C00000)
+    {
+        t -= 0xA8C00000;
+    }
 
     sys_safe_access_enable();
     R32_RTC_TRIG = t;

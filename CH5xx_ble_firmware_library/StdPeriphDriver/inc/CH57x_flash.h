@@ -26,6 +26,8 @@ extern "C" {
  */
 void FLASH_ROM_READ(uint32_t StartAddr, void *Buffer, uint32_t len);
 
+void GET_UNIQUE_ID(uint8_t *Buffer);
+
 #ifdef __cplusplus
 }
 #endif
